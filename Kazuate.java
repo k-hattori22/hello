@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Kazuate {
     public static void main(String[] args) {
-        int secretNumber = (int) (Math.random() * 99) + 1; // 1から99までのランダムな数を生成
+        int secretNumber = (int) (Math.random() * 90) + 10; // 10から99までのランダムな数を生成
         int attempts = 0; // 予想回数を初期化
 
-        System.out.println("1から99までの数を予想してください。");
+        System.out.println("10から99までの数を予想してください。");
         System.out.println("予想回数は最大5回までです。");
 
         Scanner scanner = new Scanner(System.in);
@@ -28,9 +28,9 @@ public class Kazuate {
                 System.out.println("外れ！");
 
                 if (guess > secretNumber) {
-                    System.out.println("設定された数より小さいです。");
-                } else {
                     System.out.println("設定された数より大きいです。");
+                } else {
+                    System.out.println("設定された数より小さいです。");
                 }
 
                 int difference = Math.abs(guess - secretNumber);
@@ -41,7 +41,7 @@ public class Kazuate {
         }
 
         if (attempts >= 5) {
-            System.out.println("5回の予想機会を使い果たしました。正解は " + secretNumber + " でした。");
+            System.out.println("5回の予想可能数を使い果たしました。正解は " + secretNumber + " でした。");
         }
 
         scanner.close();
